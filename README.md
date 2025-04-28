@@ -262,7 +262,7 @@ Pandas оказывается самым медленным способом з�
 
 ![image](https://github.com/user-attachments/assets/c56d10f5-1469-4b59-9171-e0e7d7400ab9)
 
-#Вариант 10 Индивдуальные задания
+# Вариант 10 Индивдуальные задания
 1.Настройка таблиц. Создать таблицы sales_small, sales_big.
 2.Загрузка малых данных. Метод:pandas.to_sql()
 3.Загрузка больших данных. Метод: copy_expert (file)
@@ -274,7 +274,7 @@ Pandas оказывается самым медленным способом з�
 
 ![image](https://github.com/user-attachments/assets/0d1db53d-102e-4de3-bb3b-c2746f90b2c2)
 
-#Задание 1. Настройка таблиц. Создать таблицы sales_small, sales_big.
+# Задание 1. Настройка таблиц. Создать таблицы sales_small, sales_big.
 ````
 print("\n--- Задача 1: Создание таблиц ---")
 create_table(small_table_name)
@@ -284,13 +284,13 @@ create_table(big_table_name)
 
 ![image](https://github.com/user-attachments/assets/65a83436-1875-4e02-9208-9376c208056a)
 
-#2.Загрузка малых данных. Метод:pandas.to_sql()
+# 2.Загрузка малых данных. Метод:pandas.to_sql()
 
 ````
 import pandas as pd
 from sqlalchemy import create_engine
 
-# 1. Загрузка данных из CSV-файла
+#1. Загрузка данных из CSV-файла
 csv_file_path = r'C:\Users\coco4\Downloads\upload_test_data.csv'   # Путь к вашему CSV-файлу
 df = pd.read_csv(csv_file_path)
 # 2. Создание подключения к базе данных PostgreSQL
@@ -305,7 +305,7 @@ database = 'Pr_08'
 connection_string = f'postgresql+psycopg2://{username}:{password}@{host}:{port}/{database}'
 engine = create_engine(connection_string)
 
-# 3. Загрузка данных в таблицу PostgreSQL
+#3. Загрузка данных в таблицу PostgreSQL
 table_name = 'sales_small'  # Имя таблицы в PostgreSQL
 df.to_sql(table_name, engine, if_exists='replace', index=False)
 
@@ -313,7 +313,7 @@ print(f"Данные успешно загружены в таблицу '{table
 ````
 ![image](https://github.com/user-attachments/assets/dd23ca9b-618b-4015-8531-d5a9cc48ca85)
 
-#3.Загрузка больших данных. Метод: copy_expert (file)
+# 3.Загрузка больших данных. Метод: copy_expert (file)
 ````
 print(f"\n--- Задача 3: Загрузка данных из '{big_csv_path}' в '{big_table_name}' (метод file) ---")
 if os.path.exists(big_csv_path):
@@ -323,7 +323,7 @@ else:
 ````
 ![image](https://github.com/user-attachments/assets/31edb3b1-226a-4718-82bf-41ad8b1ad05b)
 
-#4.SQL: Найти id из sales_small, где total_revenue < 0.1.
+# 4.SQL: Найти id из sales_small, где total_revenue < 0.1.
 ````
 print("\n--- Задача 4: SQL Анализ таблицы sales_small ---")
 sql_query_task4 = f"""
@@ -348,7 +348,7 @@ else:
 
 ![image](https://github.com/user-attachments/assets/68f52284-81de-4ee7-a786-cb7ec3b3a4cb)
 
-#5.Python: Извлечь 100 случайных записей из sales_big, построить scatter plot quantity vs cost.
+# 5.Python: Извлечь 100 случайных записей из sales_big, построить scatter plot quantity vs cost.
 
 ````
 import psycopg2  # Для подключения к PostgreSQL
